@@ -50,9 +50,8 @@ Instalasi dengan:
 ```bash
 pip install numpy pandas matplotlib seaborn scikit-learn imbalanced-learn
 ```
-# 🚀 Langkah-langkah Menjalankan Kode
 
-Ikuti panduan berikut untuk menjalankan eksperimen clustering menggunakan dua notebook utama: satu tanpa penyeimbangan data dan satu dengan penyeimbangan data menggunakan ADASYN.
+Ikuti panduan berikut untuk menjalankan eksperimen clustering menggunakan dua notebook utama: [Clustering tanpa Penyeimbangan Data](./notebooks/clustering_tanpa_penyeimbangan.ipynb) dan [Clustering dengan Penyeimbangan Data](./notebooks/clusteringg_dengan_penyeimbangan.ipynb)
 
 ---
 
