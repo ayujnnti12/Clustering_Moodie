@@ -81,7 +81,7 @@ Hasil clustering yang telah diperoleh divisualisasikan menggunakan **Principal C
 - **Visualisasi Scatter Plot** menunjukkan pemisahan yang jelas antar cluster.
 - Analisis statistik terhadap distribusi skor **DASS** dan karakteristik **demografis** responden semakin memperkuat bahwa cluster yang terbentuk memiliki makna psikologis yang signifikan, yang memisahkan responden dengan tingkat depresi, kecemasan, dan stres yang berbeda.
 
-![Deskripsi Gambar](images/dengan adasyn.png)
+![Deskripsi Gambar](visualisasi/dengan adasyn.png)
 
 ## **Kesimpulan**
 
