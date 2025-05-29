@@ -19,7 +19,7 @@ Metode clustering dalam penelitian ini digunakan untuk deteksi dini dan pemahama
 
 ---
 
-## 📊 **Deskripsi Dataset**
+## 🔍 **Deskripsi Dataset**
 
 Dataset survei DASS yang digunakan terdiri dari **39.775 baris** dan **172 kolom**, berformat CSV, mencakup:
 - **42 kolom skor DASS (Q1A–Q42A)** yang merepresentasikan tingkat depresi, kecemasan, dan stres.
@@ -51,43 +51,37 @@ Instalasi dengan:
 pip install numpy pandas matplotlib seaborn scikit-learn imbalanced-learn
 ```
 
-Ikuti panduan berikut untuk menjalankan eksperimen clustering menggunakan dua notebook utama: [Clustering tanpa Penyeimbangan Data](./notebooks/clustering_tanpa_penyeimbangan.ipynb) dan [Clustering dengan Penyeimbangan Data](./notebooks/clusteringg_dengan_penyeimbangan.ipynb)
+### Menjalankan Eksperimen Tanpa Penyeimbangan Data
 
----
-
-## 1️⃣ Menjalankan Eksperimen Tanpa Penyeimbangan Data
-
-📂 **Notebook:** `clustering_tanpa_penyeimbangan.ipynb`
+📂 **Notebook:** [Clustering tanpa Penyeimbangan Data](./notebooks/clustering_tanpa_penyeimbangan.ipynb)
 
 ### Cara menjalankan:
 - Buka notebook tersebut di Jupyter Notebook, JupyterLab, atau Google Colab.
-- Jalankan setiap sel secara berurutan dengan menekan **Shift + Enter**.
+- Jalankan setiap sel secara berurutan dengan menekan Shift + Enter.
 
 ### Apa yang akan dilakukan pada notebook ini?
 - **Eksplorasi Data (EDA)**  
   Memahami struktur data, mengecek nilai yang hilang, dan mengevaluasi distribusi kelas responden.
   
 - **Pembersihan Data**  
-  Menghapus data yang tidak valid menggunakan **Vocabulary Check List (VCL)**.
+  Menghapus data yang tidak valid menggunakan `Vocabulary Check List (VCL)`.
 
 - **Normalisasi Data**  
-  Menggunakan **StandardScaler** untuk menstandarisasi fitur agar model tidak bias karena perbedaan skala.
+  Menggunakan `StandardScaler` untuk menstandarisasi fitur agar model tidak bias karena perbedaan skala.
 
 - **Clustering dengan K-Means dan GMM**  
   Mengelompokkan data ke dalam cluster berdasarkan fitur yang sudah diproses.
 
 - **Visualisasi Hasil**  
-  Menggunakan **PCA** untuk mereduksi dimensi dan menampilkan hasil clustering dalam bentuk scatter plot.
+  Menggunakan `PCA` untuk mereduksi dimensi dan menampilkan hasil clustering dalam bentuk scatter plot.
 
----
+### Menjalankan Eksperimen dengan Penyeimbangan Data (ADASYN)
 
-## 2️⃣ Menjalankan Eksperimen dengan Penyeimbangan Data (ADASYN)
-
-📂 **Notebook:** `clusteringg_dengan_adasyn.ipynb`
+📂 **Notebook:** [Clustering dengan Penyeimbangan Data](./notebooks/clusteringg_dengan_penyeimbangan.ipynb)
 
 ### Cara menjalankan:
 - Buka notebook ini setelah menyelesaikan eksperimen tanpa penyeimbangan.
-- Jalankan semua sel secara berurutan dengan **Shift + Enter**.
+- Jalankan semua sel secara berurutan dengan Shift + Enter.
 
 ### Apa yang akan dilakukan pada notebook ini?
 - **Penyeimbangan Data dengan ADASYN**  
@@ -102,49 +96,52 @@ Ikuti panduan berikut untuk menjalankan eksperimen clustering menggunakan dua no
 
 - **Perbandingan Hasil**  
   Membandingkan hasil clustering sebelum dan sesudah penyeimbangan untuk melihat dampak teknik ADASYN terhadap performa model.
-
+  
 ---
 
-### Tips:  
-- Pastikan semua pustaka yang dibutuhkan sudah terpasang.  
-- Jalankan kode secara berurutan agar tidak terjadi error.  
-- Simpan dan dokumentasikan hasil clustering untuk analisis lebih lanjut.
+## 📊 **Contoh Hasil Output dan Visualisasi**
 
-## **Contoh Hasil Output dan Visualisasi**
-Pada bagian ini, kami akan menunjukkan contoh hasil output dan visualisasi yang dihasilkan setelah menerapkan algoritma **K-Means** dan **Gaussian Mixture Model (GMM)** untuk clustering, serta evaluasi model dan visualisasi clustering menggunakan **PCA**.
+Pada bagian ini, kami menyajikan contoh hasil output dan visualisasi yang dihasilkan dari penerapan algoritma **K-Means** dan **Gaussian Mixture Model (GMM)** untuk proses clustering, beserta evaluasi model dan visualisasi menggunakan **Principal Component Analysis (PCA)**.
 
-## **Interpretasi dan Visualisasi Hasil**
-Hasil clustering yang telah diperoleh divisualisasikan menggunakan **Principal Component Analysis (PCA)** untuk mereduksi dimensi data dan memudahkan pemahaman pola pemisahan antar cluster.
-- **Visualisasi Scatter Plot** menunjukkan pemisahan yang jelas antar cluster.
-- Analisis statistik terhadap distribusi skor **DASS** dan karakteristik **demografis** responden semakin memperkuat bahwa cluster yang terbentuk memiliki makna psikologis yang signifikan, yang memisahkan responden dengan tingkat depresi, kecemasan, dan stres yang berbeda.
+### Interpretasi dan Visualisasi Hasil
+
+Hasil clustering divisualisasikan dengan metode **PCA** yang mereduksi dimensi data menjadi dua komponen utama sehingga memudahkan pemahaman pola dan pemisahan antar cluster.
+
+### Visualisasi Clustering Tanpa Penyeimbangan Data (ADASYN)
 
 ![Clustering Tanpa ADASYN](visualisasi/tanpa_adasyn.png)
 
+*Gambar 1: Visualisasi cluster hasil clustering tanpa menggunakan teknik penyeimbangan data.*
+
+### Visualisasi Clustering Dengan Penyeimbangan Data (ADASYN)
+
 ![Clustering dengan ADASYN](visualisasi/dengan_adasyn.png)
 
-## **Kesimpulan**
+*Gambar 2: Visualisasi cluster hasil clustering setelah penyeimbangan data dengan ADASYN.*
 
-Penelitian ini berhasil melakukan segmentasi responden berdasarkan data **Depression Anxiety Stress Scales (DASS)** menggunakan metode clustering **K-Means** dan **Gaussian Mixture Model (GMM)**. Berdasarkan hasil eksperimen yang dilakukan, berikut adalah beberapa kesimpulan utama yang dapat diambil:
+---
 
-## **Kualitas Data dan Preprocessing**
-Proses preprocessing yang dilakukan terbukti sangat efektif dalam mempersiapkan dataset untuk analisis clustering. Langkah-langkah preprocessing meliputi:
-- **Pembersihan Data**: Menggunakan **Vocabulary Check List (VCL)** untuk mendeteksi data tidak valid dan menghapus responden yang tidak memenuhi kriteria validitas.
-- **Normalisasi Fitur**: Menggunakan **StandardScaler** untuk menormalisasi data sehingga semua fitur berada pada skala yang seragam, menghindari bias dalam model clustering.
-- **Penanganan Ketidakseimbangan Data**: Dengan menggunakan teknik **ADASYN** untuk menghasilkan data sintetis pada kelas minoritas, sehingga distribusi data menjadi lebih seimbang dan menghasilkan clustering yang lebih representatif.
+## 📝 **Kesimpulan**
 
-Dengan langkah-langkah ini, dataset yang digunakan memiliki kualitas yang lebih baik, yang memungkinkan model clustering menghasilkan hasil yang lebih akurat.
+Penelitian ini berhasil mengelompokkan responden berdasarkan data **Depression Anxiety Stress Scales (DASS)** menggunakan metode clustering **K-Means** dan **Gaussian Mixture Model (GMM)**.
 
-## **Pemilihan Metode Clustering**
-Kedua metode clustering yang digunakan, yaitu **K-Means** dan **GMM**, berhasil mengelompokkan data ke dalam **empat cluster optimal** yang merepresentasikan tingkat kondisi psikologis responden, mulai dari **risiko rendah hingga tinggi**.
-- **K-Means**: Memberikan hasil yang cukup jelas dalam hal pemisahan cluster, namun metode ini bergantung pada jarak centroid dan tidak dapat menangani overlapping cluster dengan baik.
-- **Gaussian Mixture Model (GMM)**: Memberikan hasil yang lebih fleksibel dalam pengelompokan data dan lebih efektif dalam menangani data dengan tumpang tindih antar cluster, karena pendekatan probabilistik yang digunakannya.
+### Kualitas Data dan Preprocessing  
+Proses preprocessing efektif dengan:  
+- Pembersihan data menggunakan `Vocabulary Check List (VCL)` untuk menghapus data tidak valid.  
+- Normalisasi fitur menggunakan `StandardScaler` agar skala fitur seragam.  
+- Penyeimbangan data dengan `ADASYN` yang menghasilkan data sintetis untuk kelas minoritas, meningkatkan representasi dan akurasi clustering.
 
-## **Evaluasi Model dan Validitas Cluster**
-Penentuan jumlah cluster optimal dilakukan dengan tiga pendekatan evaluasi yang berbeda:
-- **Elbow Method**: Menunjukkan titik optimal pada jumlah cluster yang memberikan penurunan signifikan dalam nilai within-cluster sum of squares (WCSS).
-- **Silhouette Score**: Mengukur seberapa baik data cocok dengan klaster yang ada, di mana nilai yang lebih tinggi menunjukkan kualitas clustering yang lebih baik.
-- **Bayesian Information Criterion (BIC)**: Digunakan untuk GMM dan membantu dalam memilih model dengan jumlah komponen yang optimal.
+### Pemilihan Metode Clustering  
+- **K-Means** menghasilkan cluster yang jelas tetapi kurang efektif untuk data dengan overlap cluster.  
+- **GMM** lebih fleksibel dan mampu menangani tumpang tindih cluster karena model probabilistiknya.  
+Kedua metode berhasil membagi data menjadi **empat cluster optimal** berdasarkan tingkat risiko psikologis, dari rendah hingga tinggi.
 
-Penilaian menggunakan **Silhouette Score** yang baik dan **peningkatan** setelah penggunaan ADASYN menegaskan bahwa model menghasilkan clustering yang memadai dan valid secara statistik.
+### Evaluasi Model  
+Penentuan jumlah cluster optimal menggunakan:  
+- **Elbow Method** untuk melihat penurunan WCSS.  
+- **Silhouette Score** untuk menilai kualitas cluster (nilai lebih tinggi lebih baik).  
+- **Bayesian Information Criterion (BIC)** khusus untuk GMM dalam memilih model terbaik.  
 
-Secara keseluruhan, model clustering ini berhasil mengelompokkan mahasiswa berdasarkan tingkat risiko gangguan mental mereka, memberikan dasar yang kuat untuk pengembangan sistem deteksi dini dan pencegahan gangguan mental di kalangan mahasiswa.
+Nilai **Silhouette Score** yang baik dan peningkatan setelah penyeimbangan data menegaskan validitas clustering.
+
+---
