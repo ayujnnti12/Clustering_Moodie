@@ -81,6 +81,8 @@ Hasil clustering yang telah diperoleh divisualisasikan menggunakan **Principal C
 - **Visualisasi Scatter Plot** menunjukkan pemisahan yang jelas antar cluster.
 - Analisis statistik terhadap distribusi skor **DASS** dan karakteristik **demografis** responden semakin memperkuat bahwa cluster yang terbentuk memiliki makna psikologis yang signifikan, yang memisahkan responden dengan tingkat depresi, kecemasan, dan stres yang berbeda.
 
+![Deskripsi Gambar](images/dengan adasyn.png)
+
 ## **Kesimpulan**
 
 Penelitian ini berhasil melakukan segmentasi responden berdasarkan data **Depression Anxiety Stress Scales (DASS)** menggunakan metode clustering **K-Means** dan **Gaussian Mixture Model (GMM)**. Berdasarkan hasil eksperimen yang dilakukan, berikut adalah beberapa kesimpulan utama yang dapat diambil:
