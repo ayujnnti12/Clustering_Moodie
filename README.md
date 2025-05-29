@@ -1,77 +1,115 @@
-# **ANALISIS PERBANDINGAN CLUSTERING DASS (DEPRESSION ANXIETY STRESS) MENGGUNAKAN K-MEANS DAN GMM SEBELUM DAN SESUDAH PENYEIMBANGAN DATA DENGAN ADASYN**
+# 🧠 **Analisis Perbandingan Clustering DASS (Depression Anxiety Stress) Menggunakan K-Means dan GMM Sebelum dan Sesudah Penyeimbangan Data dengan ADASYN**
 
-## **Deskripsi Singkat Proyek**
-Proyek ini bertujuan untuk menerapkan teknik **clustering** dalam mendeteksi potensi gangguan kesehatan mental pada mahasiswa menggunakan hasil survei **DASS** (Depression, Anxiety, Stress Scales). Pendekatan ini berbasis data, menggunakan algoritma **K-Means** dan **Gaussian Mixture Model (GMM)** untuk mengelompokkan mahasiswa berdasarkan tingkat risiko gangguan mental, serta membandingkan kinerja kedua metode tersebut dengan dan tanpa teknik penyeimbangan data **ADASYN**. **ADASYN** digunakan untuk mengatasi masalah ketidakseimbangan data, yang sering terjadi ketika kelompok dengan risiko tinggi lebih sedikit dibandingkan dengan kelompok risiko rendah atau sedang.
+---
 
-## **Latar Belakang Masalah**
-Kesehatan mental merupakan salah satu aspek penting dalam kualitas hidup individu, terutama bagi mahasiswa yang tengah berada dalam fase transisi menuju kedewasaan dan karier profesional. Tekanan akademik, adaptasi sosial, dan ekspektasi dari lingkungan sekitar menjadi pemicu utama gangguan mental pada mahasiswa. Berdasarkan data dari World Health Organization (WHO), sekitar 12,5% dari total populasi dunia mengalami gangguan mental, dengan kelompok usia muda dewasa termasuk mahasiswa menjadi yang paling rentan.
+## 📋 **Deskripsi Singkat Proyek**
 
-Masalah ini semakin krusial dengan hasil **Riset Kesehatan Dasar (Riskesdas) 2018** di Indonesia, yang menyebutkan bahwa gangguan mental emosional pada usia 15 tahun ke atas mencapai 9,8%. Beberapa kampus telah menyadari masalah ini, seperti **Universitas Negeri Semarang (UNNES)** yang telah mendirikan layanan konseling “Kawan Dengar” untuk mahasiswa. Oleh karena itu, metode clustering yang digunakan dapat menjadi langkah efektif untuk mendeteksi dan memahami kondisi psikologis mahasiswa.
+Proyek ini bertujuan menerapkan teknik **clustering** untuk mendeteksi potensi gangguan kesehatan mental pada mahasiswa menggunakan hasil survei **DASS** (Depression, Anxiety, Stress Scales).  
+Metode yang digunakan adalah **K-Means** dan **Gaussian Mixture Model (GMM)** untuk mengelompokkan mahasiswa berdasarkan risiko gangguan mental, serta membandingkan kinerja kedua metode tersebut sebelum dan sesudah penyeimbangan data menggunakan **ADASYN**.  
+**ADASYN** membantu mengatasi ketidakseimbangan data di mana jumlah responden berisiko tinggi biasanya lebih sedikit dibandingkan kelompok risiko rendah atau sedang.
 
-Pada penelitian ini, dua metode clustering, yaitu **K-Means** dan **GMM**, diterapkan untuk mengelompokkan mahasiswa berdasarkan tingkat risiko gangguan mental mereka. Salah satu tantangan yang dihadapi dalam clustering adalah masalah ketidakseimbangan data, yang dapat mengarah pada hasil yang bias. Oleh karena itu, teknik penyeimbangan data **ADASYN** digunakan untuk meningkatkan kualitas hasil clustering.
+---
 
-## **Deskripsi Dataset**
-Dataset yang digunakan dalam penelitian ini berasal dari survei DASS yang mengukur tingkat depresi, kecemasan, dan stres mahasiswa. Dataset ini memiliki format **CSV** yang memuat 39.775 baris dan 172 kolom, dengan fitur-fitur seperti skor untuk masing-masing aspek DASS (Depresi, Kecemasan, Stres), informasi demografis, dan faktor psikologis lainnya. Data ini digunakan untuk mengelompokkan mahasiswa ke dalam cluster berdasarkan risiko gangguan mental mereka.
+## 📖 **Latar Belakang Masalah**
 
-File dataset **`data.csv`** berisi:
-- **42 kolom terkait skor DASS (Q1A-Q42A)** yang mewakili hasil survei pada masing-masing kategori.
-- **Kolom demografis dan psikologis** lainnya yang meliputi usia, jenis kelamin, dan skor terkait kepribadian.
+Kesehatan mental merupakan aspek penting dalam kualitas hidup, terutama bagi mahasiswa yang sedang mengalami fase transisi menuju kedewasaan dan karier profesional. Tekanan akademik, adaptasi sosial, dan ekspektasi lingkungan sekitar menjadi pemicu utama gangguan mental.  
+Menurut data WHO, sekitar **12,5%** populasi dunia mengalami gangguan mental, termasuk mahasiswa sebagai kelompok yang rentan.  
+Di Indonesia, **Riskesdas 2018** melaporkan gangguan mental emosional pada usia 15+ mencapai **9,8%**. Beberapa kampus seperti **UNNES** telah menyediakan layanan konseling “Kawan Dengar” sebagai upaya penanganan.  
+Metode clustering dalam penelitian ini digunakan untuk deteksi dini dan pemahaman kondisi psikologis mahasiswa.
 
-## **Algoritma yang Digunakan**
+---
 
-### **K-Means Clustering**
-**K-Means** adalah algoritma clustering berbasis centroid yang mengelompokkan data ke dalam sejumlah cluster berdasarkan kedekatannya dengan pusat cluster (centroid). K-Means efektif untuk mengelompokkan data yang memiliki bentuk cluster yang jelas dan seragam.
+## 📊 **Deskripsi Dataset**
 
-### **Gaussian Mixture Model (GMM)**
-**GMM** adalah model probabilistik yang mengasumsikan bahwa data berasal dari distribusi Gaussian campuran. GMM lebih fleksibel dibandingkan K-Means, karena dapat menangani data dengan distribusi yang tidak berbentuk bulat dan dapat menangani cluster yang tumpang tindih (overlap).
+Dataset survei DASS yang digunakan terdiri dari **39.775 baris** dan **172 kolom**, berformat CSV, mencakup:
+- **42 kolom skor DASS (Q1A–Q42A)** yang merepresentasikan tingkat depresi, kecemasan, dan stres.
+- Kolom **demografis dan psikologis** lain seperti usia, jenis kelamin, dan skor kepribadian.
 
-### **ADASYN (Adaptive Synthetic Sampling)**
-**ADASYN** digunakan untuk menyeimbangkan dataset yang tidak seimbang, terutama ketika jumlah kelas minoritas lebih sedikit. **ADASYN** menghasilkan data sintetis berdasarkan distribusi lokal data minoritas, sehingga menghasilkan segmentasi yang lebih akurat dan representatif.
+---
 
-## **Panduan Menjalankan Kode**
+## ⚙️ **Algoritma yang Digunakan**
 
-### **Prasyarat**
-Pastikan telah menginstall beberapa pustaka yang diperlukan:
-- `numpy`
-- `pandas`
-- `matplotlib`
-- `seaborn`
-- `sklearn`
-- `imblearn`
+### K-Means Clustering  
+Metode clustering berbasis centroid, mengelompokkan data berdasarkan jarak ke pusat cluster. Efektif untuk cluster dengan bentuk seragam dan jelas.
 
-Instal pustaka yang diperlukan menggunakan pip:
+### Gaussian Mixture Model (GMM)  
+Model probabilistik yang mengasumsikan data berasal dari campuran distribusi Gaussian. Lebih fleksibel dan mampu menangani cluster yang overlap.
+
+### ADASYN (Adaptive Synthetic Sampling)  
+Teknik penyeimbangan data dengan menghasilkan data sintetis pada kelas minoritas untuk mengurangi bias akibat ketidakseimbangan dataset.
+
+---
+
+## 🚀 **Panduan Menjalankan Kode**
+
+### Prasyarat  
+Pastikan pustaka Python berikut telah terpasang:  
+`numpy`, `pandas`, `matplotlib`, `seaborn`, `scikit-learn`, `imbalanced-learn`  
+
+Instalasi dengan:  
+```bash
 pip install numpy pandas matplotlib seaborn scikit-learn imbalanced-learn
+```
+# 🚀 Langkah-langkah Menjalankan Kode
 
-### **Langkah-langkah Menjalankan Kode**
-1. Menjalankan Eksperimen Tanpa Penyeimbangan Data 
-- Buka notebook `clustering_tanpa_penyeimbangan.ipynb`.
-- Jalankan setiap sel di notebook secara berurutan dengan menekan Shift + Enter.
-- Pada notebook ini, lakukan eksplorasi data (EDA), pembersihan data, normalisasi, dan menerapkan K-Means dan Gaussian Mixture Model (GMM) untuk clustering.
-- Langkah-langkah dalam notebook ini:
+Ikuti panduan berikut untuk menjalankan eksperimen clustering menggunakan dua notebook utama: satu tanpa penyeimbangan data dan satu dengan penyeimbangan data menggunakan ADASYN.
 
-Eksplorasi Data (EDA): Memahami struktur data, memeriksa nilai hilang, dan mengevaluasi distribusi kelas.
+---
 
-Pembersihan Data: Menghapus data yang tidak valid menggunakan teknik Vocabulary Check List (VCL).
+## 1️⃣ Menjalankan Eksperimen Tanpa Penyeimbangan Data
 
-Normalisasi: Menggunakan StandardScaler untuk menstandarisasi fitur sehingga model tidak bias terhadap fitur dengan skala yang lebih besar.
+📂 **Notebook:** `clustering_tanpa_penyeimbangan.ipynb`
 
-Clustering: Menggunakan K-Means dan GMM untuk melakukan clustering pada dataset yang telah diproses.
+### Cara menjalankan:
+- Buka notebook tersebut di Jupyter Notebook, JupyterLab, atau Google Colab.
+- Jalankan setiap sel secara berurutan dengan menekan **Shift + Enter**.
 
-Visualisasi: Melakukan PCA untuk mereduksi dimensi data dan menampilkan hasil clustering dalam bentuk scatter plot.
+### Apa yang akan dilakukan pada notebook ini?
+- **Eksplorasi Data (EDA)**  
+  Memahami struktur data, mengecek nilai yang hilang, dan mengevaluasi distribusi kelas responden.
+  
+- **Pembersihan Data**  
+  Menghapus data yang tidak valid menggunakan **Vocabulary Check List (VCL)**.
 
-2. Menjalankan Eksperimen dengan Penyeimbangan Data (ADASYN)
-- Setelah eksperimen tanpa penyeimbangan selesai, buka notebook `clusteringg_dengan_adasyn.ipynb`.
-- Jalankan setiap sel secara berurutan dengan menekan Shift + Enter.
-- Pada notebook ini, mengimplementasikan teknik ADASYN untuk menyeimbangkan data dan mengulang eksperimen clustering dengan K-Means dan GMM.
-- Langkah-langkah dalam notebook ini:
+- **Normalisasi Data**  
+  Menggunakan **StandardScaler** untuk menstandarisasi fitur agar model tidak bias karena perbedaan skala.
 
-Penyeimbangan Data dengan ADASYN: Menggunakan ADASYN untuk menyeimbangkan dataset dengan menghasilkan data sintetis pada kelas minoritas.
+- **Clustering dengan K-Means dan GMM**  
+  Mengelompokkan data ke dalam cluster berdasarkan fitur yang sudah diproses.
 
-Clustering dengan ADASYN: Setelah data diseimbangkan, lakukan eksperimen clustering menggunakan K-Means dan GMM seperti pada eksperimen sebelumnya.
+- **Visualisasi Hasil**  
+  Menggunakan **PCA** untuk mereduksi dimensi dan menampilkan hasil clustering dalam bentuk scatter plot.
 
-Evaluasi dan Visualisasi: Evaluasi dilakukan menggunakan Silhouette Score dan BIC untuk GMM. Visualisasi clustering dilakukan menggunakan PCA yang sama seperti eksperimen sebelumnya.
+---
 
-Perbandingan Hasil: Di sini dapat membandingkan hasil clustering sebelum dan sesudah penyeimbangan data, serta melihat peningkatan kinerja.
+## 2️⃣ Menjalankan Eksperimen dengan Penyeimbangan Data (ADASYN)
+
+📂 **Notebook:** `clusteringg_dengan_adasyn.ipynb`
+
+### Cara menjalankan:
+- Buka notebook ini setelah menyelesaikan eksperimen tanpa penyeimbangan.
+- Jalankan semua sel secara berurutan dengan **Shift + Enter**.
+
+### Apa yang akan dilakukan pada notebook ini?
+- **Penyeimbangan Data dengan ADASYN**  
+  Menghasilkan data sintetis untuk kelas minoritas agar distribusi data lebih seimbang.
+
+- **Clustering dengan K-Means dan GMM**  
+  Melakukan clustering ulang pada data yang sudah diseimbangkan.
+
+- **Evaluasi dan Visualisasi**  
+  Menggunakan metrik **Silhouette Score** dan **BIC** (untuk GMM) untuk evaluasi kualitas cluster.  
+  Visualisasi cluster dengan PCA untuk memudahkan interpretasi.
+
+- **Perbandingan Hasil**  
+  Membandingkan hasil clustering sebelum dan sesudah penyeimbangan untuk melihat dampak teknik ADASYN terhadap performa model.
+
+---
+
+### Tips:  
+- Pastikan semua pustaka yang dibutuhkan sudah terpasang.  
+- Jalankan kode secara berurutan agar tidak terjadi error.  
+- Simpan dan dokumentasikan hasil clustering untuk analisis lebih lanjut.
 
 ## **Contoh Hasil Output dan Visualisasi**
 Pada bagian ini, kami akan menunjukkan contoh hasil output dan visualisasi yang dihasilkan setelah menerapkan algoritma **K-Means** dan **Gaussian Mixture Model (GMM)** untuk clustering, serta evaluasi model dan visualisasi clustering menggunakan **PCA**.
