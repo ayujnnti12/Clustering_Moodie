@@ -73,6 +73,14 @@ Evaluasi dan Visualisasi: Evaluasi dilakukan menggunakan Silhouette Score dan BI
 
 Perbandingan Hasil: Di sini dapat membandingkan hasil clustering sebelum dan sesudah penyeimbangan data, serta melihat peningkatan kinerja.
 
+## **Contoh Hasil Output dan Visualisasi**
+Pada bagian ini, kami akan menunjukkan contoh hasil output dan visualisasi yang dihasilkan setelah menerapkan algoritma **K-Means** dan **Gaussian Mixture Model (GMM)** untuk clustering, serta evaluasi model dan visualisasi clustering menggunakan **PCA**.
+
+## **Interpretasi dan Visualisasi Hasil**
+Hasil clustering yang telah diperoleh divisualisasikan menggunakan **Principal Component Analysis (PCA)** untuk mereduksi dimensi data dan memudahkan pemahaman pola pemisahan antar cluster.
+- **Visualisasi Scatter Plot** menunjukkan pemisahan yang jelas antar cluster.
+- Analisis statistik terhadap distribusi skor **DASS** dan karakteristik **demografis** responden semakin memperkuat bahwa cluster yang terbentuk memiliki makna psikologis yang signifikan, yang memisahkan responden dengan tingkat depresi, kecemasan, dan stres yang berbeda.
+
 ## **Kesimpulan**
 
 Penelitian ini berhasil melakukan segmentasi responden berdasarkan data **Depression Anxiety Stress Scales (DASS)** menggunakan metode clustering **K-Means** dan **Gaussian Mixture Model (GMM)**. Berdasarkan hasil eksperimen yang dilakukan, berikut adalah beberapa kesimpulan utama yang dapat diambil:
@@ -97,10 +105,5 @@ Penentuan jumlah cluster optimal dilakukan dengan tiga pendekatan evaluasi yang 
 - **Bayesian Information Criterion (BIC)**: Digunakan untuk GMM dan membantu dalam memilih model dengan jumlah komponen yang optimal.
 
 Penilaian menggunakan **Silhouette Score** yang baik dan **peningkatan** setelah penggunaan ADASYN menegaskan bahwa model menghasilkan clustering yang memadai dan valid secara statistik.
-
-## **Interpretasi dan Visualisasi Hasil**
-Hasil clustering yang telah diperoleh divisualisasikan menggunakan **Principal Component Analysis (PCA)** untuk mereduksi dimensi data dan memudahkan pemahaman pola pemisahan antar cluster.
-- **Visualisasi Scatter Plot** menunjukkan pemisahan yang jelas antar cluster.
-- Analisis statistik terhadap distribusi skor **DASS** dan karakteristik **demografis** responden semakin memperkuat bahwa cluster yang terbentuk memiliki makna psikologis yang signifikan, yang memisahkan responden dengan tingkat depresi, kecemasan, dan stres yang berbeda.
 
 Secara keseluruhan, model clustering ini berhasil mengelompokkan mahasiswa berdasarkan tingkat risiko gangguan mental mereka, memberikan dasar yang kuat untuk pengembangan sistem deteksi dini dan pencegahan gangguan mental di kalangan mahasiswa.
